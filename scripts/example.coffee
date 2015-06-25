@@ -9,9 +9,12 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 module.exports = (robot) ->
+  robot.hear /badger/i, (res) ->
+    res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
 
-   robot.hear /badger/i, (res) ->
-     res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
+  robot.hear /retriever test (.*)/i, (res) ->
+    branch = res.match[1]
+    res.reply "test" + branch
   
   # robot.respond /open the (.*) doors/i, (res) ->
   #   doorType = res.match[1]
@@ -20,8 +23,8 @@ module.exports = (robot) ->
   #   else
   #     res.reply "Opening #{doorType} doors"
   #
-   robot.hear /I like pie/i, (res) ->
-     res.emote "makes a freshly baked pie"
+  # robot.hear /I like pie/i, (res) ->
+  #   res.emote "makes a freshly baked pie"
   #
   # lulz = ['lol', 'rofl', 'lmao']
   #

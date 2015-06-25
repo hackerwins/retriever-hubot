@@ -6,6 +6,7 @@
   "description": "helpful robot for summernote",
   "dependencies": {
     "hubot": "^2.13.2",
+    "hubot-deploy": "^0.6.53",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.1.5",
     "hubot-google-translate": "^0.2.0",
