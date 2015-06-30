@@ -1,4 +1,5 @@
 slack = require './slack.coffee'
+_ = require('lodash');
 
 module.exports = (robot) ->
   robot.hear /!두둠칫/i, (msg) -> 
@@ -27,13 +28,18 @@ module.exports = (robot) ->
     delay 1000, -> msg.send "결과 #{result}"
 
   robot.hear /!방/i, (msg) ->
-    slack.channelList(msg).then (channels) ->
+    slack.channelList(msg)
+    .then (channels) ->
       msg.send JSON.stringify(channels) + ' ' + msg.message.room
     .catch (err) ->
       msg.send "읭~ 슬랙이랑 연결 못하겠음"
 
   robot.hear /!사다리/i, (msg) ->
-    slack.memberList(msg).then (members) ->
-      msg.send JSON.stringify(members)
+    slack.memberList(msg)
+    .then (members) ->
+      members = _.shuffle members
+      results = _.map members, (memberName, idx) ->
+        "#{idx + 1} 등: #{memberName}"
+      msg.send results.join '\n'
     .catch (err) ->        
-      msg.send "읭~ 슬랙이랑 연결 못하겠음"
+      msg.send "읭~ 슬랙이랑 연결 못하겠음", err
