@@ -37,8 +37,7 @@ module.exports =
   memberList: (msg) ->
     channelList(msg)
     .then (channels) ->
-      #channel = _.find channels, (channel) -> channel.name is msg.message.room
-      channel = _.find channels, (channel) -> channel.name is 'training-retriever'
+      channel = _.find channels, (channel) -> channel.name is msg.message.room
       channelInfo(msg, channel.id)
     .then (memberIds) ->
       usersList(msg, memberIds)
