@@ -24,6 +24,6 @@
     "node": "0.10.x"
   },
   "devDependencies": {
-    "lodash": "^3.9.3"
+    "bluebird": "^2.9.30"
   }
 }
