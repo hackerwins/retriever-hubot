@@ -1,5 +1,5 @@
 module.exports = (robot) ->
-  robot.hear /travis me (.*)/i, (msg) ->
+  robot.hear /!travis me (.*)/i, (msg) ->
     branch = escape(msg.match[1])
     path = "https://api.travis-ci.org/repos/summernote/summernote/branches/#{branch}"
 
