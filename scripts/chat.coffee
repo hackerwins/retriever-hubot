@@ -27,13 +27,6 @@ module.exports = (robot) ->
     msg.send "#{username}님이 주사위를 굴렸습니다."
     delay 1000, -> msg.send "결과 #{result}"
 
-  robot.hear /!방/i, (msg) ->
-    slack.channelList(msg)
-    .then (channels) ->
-      msg.send JSON.stringify(channels) + ' ' + msg.message.room
-    .catch (err) ->
-      msg.send "읭~ 슬랙이랑 연결 못하겠음"
-
   robot.hear /!사다리/i, (msg) ->
     slack.memberList(msg)
     .then (members) ->
