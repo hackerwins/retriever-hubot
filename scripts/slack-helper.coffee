@@ -1,5 +1,5 @@
-Promise = require('bluebird');
-_ = require('lodash');
+Promise = require('bluebird')
+_ = require('lodash')
 
 token = process.env.SLACK_TOKEN
 

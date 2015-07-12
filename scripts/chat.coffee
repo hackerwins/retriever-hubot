@@ -1,5 +1,5 @@
 slack = require './slack-helper.coffee'
-_ = require('lodash');
+_ = require('lodash')
 
 module.exports = (robot) ->
   robot.hear /!두둠칫/i, (msg) -> 
