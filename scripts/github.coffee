@@ -1,5 +1,5 @@
 Promise = require('bluebird');
-child = require('child-process')
+child = require('child_process')
 exec = Promise.promisify(child.exec)
 
 module.exports = (robot) ->
