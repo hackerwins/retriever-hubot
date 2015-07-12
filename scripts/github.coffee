@@ -9,4 +9,4 @@ module.exports = (robot) ->
     .then (result) ->
       msg.send 'Update dist files: https://github.com/summernote/summernote/commits/master'
     .catch (e) ->
-      msg.send 'Fail to update dist files' + e
+      msg.send ['Fail to update dist files', e].join('\n')
