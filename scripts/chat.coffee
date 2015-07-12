@@ -1,4 +1,4 @@
-slack = require './slack.coffee'
+slack = require './slack-helper.coffee'
 _ = require('lodash');
 
 module.exports = (robot) ->
